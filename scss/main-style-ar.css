@@ -1,0 +1,347 @@
+/* ==========================================================================
+   Arabic (RTL) overrides
+   Loaded after main-style.css on the *-ar.html pages, which set
+   <html lang="ar" dir="rtl">. Flex/grid layouts mirror automatically with
+   dir="rtl"; this file only flips what is physically positioned
+   (left/right, margins, paddings, borders, arrows and gradients).
+   Note: a rule here outranks the same selector inside a media query in
+   main-style.scss, so breakpoint variants are repeated where they differ.
+   ========================================================================== */
+[dir=rtl] .navbar-brand {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+@media (min-width: 75rem) {
+  [dir=rtl] .navbar-nav {
+    margin-left: 0;
+    margin-right: 1.5rem;
+  }
+  [dir=rtl] .header-actions {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+[dir=rtl] .header-right {
+  margin-left: 0;
+  margin-right: auto;
+}
+[dir=rtl] .navbar-nav--main {
+  margin-left: 0;
+  margin-right: 44px;
+}
+@media (max-width: 1599px) and (min-width: 1200px) {
+  [dir=rtl] .navbar-nav--main {
+    margin-right: 12px;
+  }
+}
+@media (max-width: 1199px) {
+  [dir=rtl] .navbar-nav--main {
+    margin-right: 0;
+  }
+}
+[dir=rtl] .navbar-nav--secondary {
+  margin-right: 0;
+}
+[dir=rtl] .nav-dropdown-toggle {
+  text-align: right;
+}
+[dir=rtl] .site-header .header-buy::before {
+  animation-name: header-buy-shine-rtl;
+}
+[dir=rtl] .mega-menu {
+  text-align: right;
+}
+[dir=rtl] .mega-menu__quote img {
+  transform: rotate(90deg);
+}
+@media (max-width: 1199px) {
+  [dir=rtl] .mega-menu ul {
+    padding-left: 0;
+    padding-right: 26px;
+  }
+  [dir=rtl] .mega-menu ul.mega-menu__links {
+    padding-right: 0;
+  }
+}
+@media (max-width: 575px) {
+  [dir=rtl] .mega-menu__cards {
+    padding-left: 0;
+    padding-right: 26px;
+  }
+}
+[dir=rtl] .header-call-panel {
+  right: auto;
+  left: 0;
+  text-align: right;
+}
+[dir=rtl] .hero .product-card__popover {
+  text-align: right;
+}
+[dir=rtl] .hero .product-card__benefit-row > span {
+  padding-left: 0;
+  padding-right: 9px;
+  border-left: 0;
+  border-right: 2px solid var(--primary);
+}
+[dir=rtl] :is(.car-hero, .hero) .car-hero__actions::before {
+  left: auto;
+  right: 6px;
+}
+[dir=rtl] :is(.car-hero, .hero) .car-hero__actions:has(.car-hero__action:nth-child(2):hover)::before, [dir=rtl] :is(.car-hero, .hero) .car-hero__actions:has(.car-hero__action:nth-child(2):focus-visible)::before {
+  transform: translateX(-100%);
+}
+[dir=rtl] .cover-life__toggle {
+  right: auto;
+  left: 50px;
+}
+@media (max-width: 1199px) {
+  [dir=rtl] .cover-life__toggle {
+    left: auto;
+  }
+}
+[dir=rtl] .cover-life__toggle::before {
+  left: auto;
+  right: 6px;
+}
+[dir=rtl] .cover-life__panel[data-cover-type=Business] .cover-life__toggle::before {
+  transform: translateX(-100%);
+}
+[dir=rtl] .cover-life__tabs {
+  left: 36px;
+  right: 60px;
+}
+@media (max-width: 1199px) {
+  [dir=rtl] .cover-life__tabs {
+    left: 32px;
+    right: 32px;
+  }
+}
+@media (max-width: 767px) {
+  [dir=rtl] .cover-life__tabs {
+    left: auto;
+    right: auto;
+  }
+}
+[dir=rtl] .cover-life__media::after {
+  background: radial-gradient(ellipse at top left, rgba(0, 97, 255, 0.92), transparent 29%), linear-gradient(270deg, rgba(0, 0, 0, 0.6), transparent 72%), linear-gradient(180deg, transparent 50%, rgba(0, 17, 45, 0.55));
+}
+@media (max-width: 767px) {
+  [dir=rtl] .cover-life__media::after {
+    background: radial-gradient(ellipse at top left, rgba(0, 97, 255, 0.65), transparent 35%), linear-gradient(270deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.22)), linear-gradient(180deg, transparent 45%, rgba(0, 17, 45, 0.8));
+  }
+}
+@media (min-width: 48rem) {
+  [dir=rtl] .action-row__arrow {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+@media (min-width: 768px) {
+  [dir=rtl] .heritage .action-row__preview {
+    right: auto;
+    left: 2.72%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1399px) {
+  [dir=rtl] .heritage .action-row__preview {
+    left: 20px;
+  }
+}
+[dir=rtl] .why-choose__panel {
+  background-image: linear-gradient(104deg, transparent 55%, #002158 101%);
+}
+[dir=rtl] .why-choose__panel::before {
+  transform: none;
+}
+[dir=rtl] .why-choose__panel::after {
+  background: linear-gradient(104deg, transparent 55%, #002158 101%);
+}
+[dir=rtl] .faq-item__btn {
+  text-align: right;
+}
+[dir=rtl] .faq-item__body {
+  padding-left: 0;
+  padding-right: 73px;
+}
+@media (max-width: 767px) {
+  [dir=rtl] .faq-item__body {
+    padding-right: 36px;
+  }
+}
+@media (max-width: 767px) {
+  [dir=rtl] .faq-item__question {
+    padding-right: 0;
+    padding-left: 12px;
+  }
+}
+[dir=rtl] .portal__switch button {
+  padding: 4px 4px 4px 13px;
+}
+@media (max-width: 767px) {
+  [dir=rtl] .portal__switch button {
+    padding-left: 15px;
+  }
+}
+[dir=rtl] .footer-quick__arrow {
+  margin-left: 0;
+  margin-right: auto;
+}
+[dir=rtl] .footer-brand .footer-brand__portal img {
+  transform: rotate(90deg);
+}
+@media (max-width: 1199px) {
+  [dir=rtl] .car-hero__background {
+    left: 70%;
+  }
+}
+@media (max-width: 991px) {
+  [dir=rtl] .car-hero__background {
+    left: 39%;
+    transform: translateX(-39%);
+  }
+}
+[dir=rtl] .car-quote-card__ready li::before {
+  margin: 0 0 2px 9px;
+}
+[dir=rtl] .car-quote-card__phone a {
+  padding-left: 0;
+  padding-right: 10px;
+}
+[dir=rtl] .car-offer-pill {
+  padding: 7px 8px 7px 16px;
+}
+@media (max-width: 767px) {
+  [dir=rtl] .car-offer-pill {
+    padding-right: 8px;
+    padding-left: 9px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  [dir=rtl] .car-page-nav span.blue_color {
+    padding-left: 30px;
+    padding-right: 12px;
+  }
+}
+[dir=rtl] .offer-tag {
+  left: auto;
+  right: 42px;
+}
+[dir=rtl] .car-plan-card__badge {
+  left: auto;
+  right: 50px;
+}
+[dir=rtl] .car-compare-table th,
+[dir=rtl] .car-compare-table td {
+  border-right: 0;
+  border-left: 1px solid #e8e8e8;
+}
+[dir=rtl] .car-compare-table th:last-child,
+[dir=rtl] .car-compare-table td:last-child {
+  border-left: 0;
+}
+[dir=rtl] .car-compare-table thead th:first-child,
+[dir=rtl] .car-compare-table tbody th,
+[dir=rtl] .car-compare-table tbody td:first-child,
+[dir=rtl] .car-compare-table tfoot th {
+  text-align: right;
+}
+[dir=rtl] .car-compare-table__expand-row td {
+  text-align: right;
+}
+[dir=rtl] .car-compare-table__expand-row button [aria-hidden=true] {
+  margin-left: 0;
+  margin-right: 8px;
+}
+@media (max-width: 767px) {
+  [dir=rtl] .car-compare__filters {
+    margin-right: 0;
+    margin-left: -14px;
+  }
+}
+[dir=rtl] .car-addon li {
+  padding-left: 0;
+  padding-right: 30px;
+}
+[dir=rtl] .car-addon li::before {
+  left: auto;
+  right: 0;
+}
+[dir=rtl] .car-faq__footer b {
+  margin-left: 0;
+  margin-right: 4px;
+}
+[dir=rtl] .corporate-quote__consent,
+[dir=rtl] .corporate-underwriter__actions a {
+  text-align: right;
+}
+@media (min-width: 768px) {
+  [dir=rtl] .corporate-underwriter__actions a + a {
+    border-left: 0;
+    border-right: 1px solid #e3e8ee;
+  }
+}
+@media (min-width: 1200px) {
+  [dir=rtl] .corporate-hero__art {
+    left: auto;
+    right: max((100% - 1500px) / 2 + 440px, 32%);
+  }
+}
+[dir=rtl] .car-hero--banner .car-hero__background {
+  transform: scaleX(-1);
+}
+[dir=rtl] select.form-pill {
+  background-position: left 20px center;
+}
+[dir=rtl] input.form-pill:is([type=email], [type=tel]) {
+  direction: ltr;
+  text-align: right;
+}
+[dir=rtl] .header-call-panel__number,
+[dir=rtl] .footer-quick__value,
+[dir=rtl] a[href^="tel:"] strong,
+[dir=rtl] .branch-card__phones a,
+[dir=rtl] .roadside-hero .car-hero__copy > p strong,
+[dir=rtl] .garage-card__details a[href^="tel:"] {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: right;
+}
+[dir=rtl] .back-to-top {
+  right: auto;
+  left: 24px;
+}
+@media (max-width: 767px) {
+  [dir=rtl] .back-to-top {
+    left: 16px;
+  }
+}
+[dir=rtl] .callback-panel .callback-panel__close {
+  right: auto;
+  left: 22px;
+}
+[dir=rtl] .corporate-quote .telemarketing .telemarketing-close,
+[dir=rtl] .callback-panel .telemarketing .telemarketing-close {
+  right: auto;
+  left: 60px;
+}
+@media (max-width: 575px) {
+  [dir=rtl] .corporate-quote .telemarketing .telemarketing-close,
+  [dir=rtl] .callback-panel .telemarketing .telemarketing-close {
+    left: 30px;
+  }
+}
+
+/* Right-pointing arrow icons point left in RTL. :where() keeps this weaker than
+   rules that already rotate an arrow (those stay vertical). */
+:where([dir=rtl]) img[src$="arrow-right.svg"] {
+  transform: scaleX(-1);
+}
+
+@keyframes header-buy-shine-rtl {
+  0% {
+    left: 100%;
+  }
+  40%, 100% {
+    left: -100%;
+  }
+}/*# sourceMappingURL=main-style-ar.css.map */

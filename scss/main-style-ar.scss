@@ -1,0 +1,392 @@
+/* ==========================================================================
+   Arabic (RTL) overrides
+   Loaded after main-style.css on the *-ar.html pages, which set
+   <html lang="ar" dir="rtl">. Flex/grid layouts mirror automatically with
+   dir="rtl"; this file only flips what is physically positioned
+   (left/right, margins, paddings, borders, arrows and gradients).
+   Note: a rule here outranks the same selector inside a media query in
+   main-style.scss, so breakpoint variants are repeated where they differ.
+   ========================================================================== */
+
+[dir="rtl"] {
+    // ---- Header ----
+    .navbar-brand {
+        margin-right: 0;
+        margin-left: 1rem;
+    }
+    @media (min-width: 75rem) {
+        .navbar-nav {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        .header-actions {
+            margin-left: 0;
+            margin-right: auto;
+        }
+    }
+    .header-right {
+        margin-left: 0;
+        margin-right: auto;
+    }
+    .navbar-nav--main {
+        margin-left: 0;
+        margin-right: 44px;
+
+        @media (max-width: 1599px) and (min-width: 1200px) {
+            margin-right: 12px;
+        }
+        @media (max-width: 1199px) {
+            margin-right: 0;
+        }
+    }
+    .navbar-nav--secondary {
+        margin-right: 0;
+    }
+    .nav-dropdown-toggle {
+        text-align: right;
+    }
+    .site-header .header-buy::before {
+        animation-name: header-buy-shine-rtl;
+    }
+
+    // Mega menus
+    .mega-menu {
+        text-align: right;
+    }
+    .mega-menu__quote img {
+        transform: rotate(90deg);
+    }
+    @media (max-width: 1199px) {
+        .mega-menu ul {
+            padding-left: 0;
+            padding-right: 26px;
+        }
+        .mega-menu ul.mega-menu__links {
+            padding-right: 0;
+        }
+    }
+    @media (max-width: 575px) {
+        .mega-menu__cards {
+            padding-left: 0;
+            padding-right: 26px;
+        }
+    }
+
+    // Call panel
+    .header-call-panel {
+        right: auto;
+        left: 0;
+        text-align: right;
+    }
+
+    // ---- Home: hero product cards ----
+    .hero .product-card__popover {
+        text-align: right;
+    }
+    .hero .product-card__benefit-row > span {
+        padding-left: 0;
+        padding-right: 9px;
+        border-left: 0;
+        border-right: 2px solid var(--primary);
+    }
+
+    // Hero action toggle (home + inner pages)
+    :is(.car-hero, .hero) .car-hero__actions {
+        &::before {
+            left: auto;
+            right: 6px;
+        }
+        &:has(.car-hero__action:nth-child(2):hover)::before,
+        &:has(.car-hero__action:nth-child(2):focus-visible)::before {
+            transform: translateX(-100%);
+        }
+    }
+
+    // ---- Home: Cover Life ----
+    .cover-life__toggle {
+        right: auto;
+        left: 50px;
+
+        @media (max-width: 1199px) {
+            left: auto;
+        }
+    }
+    .cover-life__toggle::before {
+        left: auto;
+        right: 6px;
+    }
+    .cover-life__panel[data-cover-type="Business"] .cover-life__toggle::before {
+        transform: translateX(-100%);
+    }
+    .cover-life__tabs {
+        left: 36px;
+        right: 60px;
+
+        @media (max-width: 1199px) {
+            left: 32px;
+            right: 32px;
+        }
+        @media (max-width: 767px) {
+            left: auto;
+            right: auto;
+        }
+    }
+    .cover-life__media::after {
+        background:
+            radial-gradient(ellipse at top left, rgba(0, 97, 255, 0.92), transparent 29%),
+            linear-gradient(270deg, rgba(0, 0, 0, 0.6), transparent 72%),
+            linear-gradient(180deg, transparent 50%, rgba(0, 17, 45, 0.55));
+
+        @media (max-width: 767px) {
+            background:
+                radial-gradient(ellipse at top left, rgba(0, 97, 255, 0.65), transparent 35%),
+                linear-gradient(270deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.22)),
+                linear-gradient(180deg, transparent 45%, rgba(0, 17, 45, 0.8));
+        }
+    }
+
+    // ---- Home: heritage action rows ----
+    @media (min-width: 48rem) {
+        .action-row__arrow {
+            margin-left: 0;
+            margin-right: auto;
+        }
+    }
+    // Only the position is mirrored; the hover tilt animation matches English.
+    @media (min-width: 768px) {
+        .heritage .action-row__preview {
+            right: auto;
+            left: 2.72%;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 1399px) {
+        .heritage .action-row__preview {
+            left: 20px;
+        }
+    }
+
+    // ---- Home: why choose ----
+    .why-choose__panel {
+        background-image: linear-gradient(104deg, transparent 55%, #002158 101%);
+    }
+    .why-choose__panel::before {
+        transform: none;
+    }
+    .why-choose__panel::after {
+        background: linear-gradient(104deg, transparent 55%, #002158 101%);
+    }
+
+    // ---- Home: FAQ ----
+    .faq-item__btn {
+        text-align: right;
+    }
+    .faq-item__body {
+        padding-left: 0;
+        padding-right: 73px;
+
+        @media (max-width: 767px) {
+            padding-right: 36px;
+        }
+    }
+    @media (max-width: 767px) {
+        .faq-item__question {
+            padding-right: 0;
+            padding-left: 12px;
+        }
+    }
+    // Icon sits on the right in RTL: tight padding on the icon side, room after the label.
+    .portal__switch button {
+        padding: 4px 4px 4px 13px;
+
+        @media (max-width: 767px) {
+            padding-left: 15px;
+        }
+    }
+
+    // ---- Footer ----
+    .footer-quick__arrow {
+        margin-left: 0;
+        margin-right: auto;
+    }
+    .footer-brand .footer-brand__portal img {
+        transform: rotate(90deg);
+    }
+
+    // ---- Inner pages: hero ----
+    // (The "›" breadcrumb separator is a bidi-mirrored character, so the browser
+    // already draws it as "‹" in RTL.)
+    .car-hero__background {
+        @media (max-width: 1199px) {
+            left: 70%;
+        }
+        @media (max-width: 991px) {
+            left: 39%;
+            transform: translateX(-39%);
+        }
+    }
+    // Bullet dot sits on the right in RTL, so its gap goes on the left (EN: 0 9px 2px 0).
+    .car-quote-card__ready li::before {
+        margin: 0 0 2px 9px;
+    }
+    .car-quote-card__phone a {
+        padding-left: 0;
+        padding-right: 10px;
+    }
+    .car-offer-pill {
+        padding: 7px 8px 7px 16px;
+
+        @media (max-width: 767px) {
+            padding-right: 8px;
+            padding-left: 9px;
+        }
+    }
+
+    // Section nav
+    @media (min-width: 768px) and (max-width: 991px) {
+        .car-page-nav span.blue_color {
+            padding-left: 30px;
+            padding-right: 12px;
+        }
+    }
+
+    // ---- Inner pages: plans & compare ----
+    .offer-tag {
+        left: auto;
+        right: 42px;
+    }
+    .car-plan-card__badge {
+        left: auto;
+        right: 50px;
+    }
+    .car-compare-table {
+        th,
+        td {
+            border-right: 0;
+            border-left: 1px solid #e8e8e8;
+        }
+        th:last-child,
+        td:last-child {
+            border-left: 0;
+        }
+        thead th:first-child,
+        tbody th,
+        tbody td:first-child,
+        tfoot th {
+            text-align: right;
+        }
+        &__expand-row td {
+            text-align: right;
+        }
+        &__expand-row button [aria-hidden="true"] {
+            margin-left: 0;
+            margin-right: 8px;
+        }
+    }
+    @media (max-width: 767px) {
+        .car-compare__filters {
+            margin-right: 0;
+            margin-left: -14px;
+        }
+    }
+
+    // ---- Inner pages: add-ons & FAQ ----
+    .car-addon li {
+        padding-left: 0;
+        padding-right: 30px;
+
+        &::before {
+            left: auto;
+            right: 0;
+        }
+    }
+    .car-faq__footer b {
+        margin-left: 0;
+        margin-right: 4px;
+    }
+
+    // ---- Corporate motor ----
+    .corporate-quote__consent,
+    .corporate-underwriter__actions a {
+        text-align: right;
+    }
+    @media (min-width: 768px) {
+        .corporate-underwriter__actions a + a {
+            border-left: 0;
+            border-right: 1px solid #e3e8ee;
+        }
+    }
+    @media (min-width: 1200px) {
+        .corporate-hero__art {
+            left: auto;
+            right: max(calc((100% - 1500px) / 2 + 440px), 32%);
+        }
+    }
+
+    // ---- About / roadside / garage locator / complaint ----
+    // (New components use logical properties, so most of them mirror on their own.
+    // The about timeline's Owl Carousel also runs with rtl: true.)
+    // Full-bleed banner art sits on the right in English; mirror it so the copy stays clear.
+    .car-hero--banner .car-hero__background {
+        transform: scaleX(-1);
+    }
+    select.form-pill {
+        background-position: left 20px center;
+    }
+    // Emails and phone numbers are typed left-to-right.
+    input.form-pill:is([type="email"], [type="tel"]) {
+        direction: ltr;
+        text-align: right;
+    }
+
+    // (Testimonials: Owl Carousel runs with rtl: true on these pages, so no overrides needed.)
+
+    // ---- Phone numbers ----
+    // In RTL the bidi algorithm reverses space-separated digit groups
+    // ("600 50 3030" shows as "3030 50 600"), so keep each number left-to-right.
+    .header-call-panel__number,
+    .footer-quick__value,
+    a[href^="tel:"] strong,
+    .branch-card__phones a,
+    .roadside-hero .car-hero__copy > p strong,
+    .garage-card__details a[href^="tel:"] {
+        direction: ltr;
+        unicode-bidi: isolate;
+        text-align: right; // block-level ones would otherwise align to the LTR start (left)
+    }
+
+    // ---- Back to top ----
+    .back-to-top {
+        right: auto;
+        left: 24px;
+
+        @media (max-width: 767px) {
+            left: 16px;
+        }
+    }
+
+    // ---- Request a callback panel ----
+    .callback-panel .callback-panel__close {
+        right: auto;
+        left: 22px;
+    }
+    .corporate-quote .telemarketing .telemarketing-close,
+    .callback-panel .telemarketing .telemarketing-close {
+        right: auto;
+        left: 60px;
+
+        @media (max-width: 575px) {
+            left: 30px;
+        }
+    }
+}
+
+/* Right-pointing arrow icons point left in RTL. :where() keeps this weaker than
+   rules that already rotate an arrow (those stay vertical). */
+:where([dir="rtl"]) img[src$="arrow-right.svg"] {
+    transform: scaleX(-1);
+}
+
+@keyframes header-buy-shine-rtl {
+    0% { left: 100%; }
+    40%, 100% { left: -100%; }
+}
